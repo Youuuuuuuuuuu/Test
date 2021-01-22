@@ -1,0 +1,46 @@
+using System;
+
+namespace Задание_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите а - ");
+            int a = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Введите b - ");
+            int b = Convert.ToInt32(Console.ReadLine());
+            
+            Console.Write("Введите c - ");
+            int c = Convert.ToInt32(Console.ReadLine());
+
+            if (a <= 0)
+                Console.WriteLine("Недопустимое значение a");
+            if (b <= 0)
+                Console.WriteLine("Недопустимое значение b");
+            if (c <= 0)
+                Console.WriteLine("Недопустимое значение c");
+                
+
+            if (c >= a + b && b >= a + c && a >= b + c)
+            {
+                Console.WriteLine("Не явлсяется треугольником");
+                return;
+            }
+
+
+            if (a == b && b == c)
+                Console.WriteLine("Равносторонний треугольник");
+            if (((a == b) && (c != a)) || (a == c) && (c != b) || (b == c) && (b != a))
+                Console.WriteLine("Равнобедренный треугольник");
+            if ((a != 0 && b != 0 && c != 0) && (a != b) && (a != b) && (b != c))
+                Console.WriteLine("Разносторонний треугольник");
+
+
+
+            Console.ReadKey();
+
+        }
+    }
+}
