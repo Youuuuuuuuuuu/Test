@@ -1,0 +1,56 @@
+using System;
+
+namespace Задание_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите целые числа, которые являются сторонами треугольника\n");
+
+            int a, b, c;
+
+            Console.Write("Введите а - ");
+            while (!int.TryParse(Console.ReadLine(), out a) || a <= 0)
+                Console.Write("Недопустимое значение\nВведите a - ");
+
+            Console.Write("Введите b - ");
+            while (!int.TryParse(Console.ReadLine(), out b) || b <= 0)
+                Console.Write("Недопустимое значение\nВведите b - ");
+
+            Console.Write("Введите c - ");
+            while (!int.TryParse(Console.ReadLine(), out c))
+                Console.Write("\nНедопустимое значение\nВведите c - ");
+
+            Console.WriteLine("\n");
+
+            
+
+            if (0 >= a || 0 >= b || 0 >= c)
+               {
+                    Console.WriteLine("\nНекорректные данные");
+                    return;
+               }
+
+
+             if (c >= a + b || b >= a + c || a >= b + c)
+                {    
+                    Console.WriteLine("\nНе является треугольником");
+                    return;
+                }
+
+             
+                if (a == b && b == c)
+                    Console.WriteLine("\nРавносторонний треугольник");
+                if (((a == b) && (c != a)) || (a == c) && (c != b) || (b == c) && (b != a))
+                    Console.WriteLine("\nРавнобедренный треугольник");
+                if ((a != b) && (a != c) && (b != c))
+                    Console.WriteLine("\nРазносторонний треугольник");
+            
+
+
+            Console.ReadKey();
+
+        }
+    }
+}
